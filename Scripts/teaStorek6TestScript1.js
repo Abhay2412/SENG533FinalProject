@@ -74,3 +74,10 @@ export default function () {
         sleep(1);
     });
 }
+
+export function handleSummary(data) {
+    console.log("\nResponse times by group:");
+    for (const groupName in groupResponseTimes) {
+        console.log(`   ${groupName}: ${groupResponseTimes[groupName]} ms`);
+    }
+}
