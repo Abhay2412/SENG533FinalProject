@@ -10,9 +10,13 @@ export const options = {
   discardResponseBodies: true,
   scenarios: {
     blackTeaBrowse: {
-        executor: 'constant-vus',
-        vus: 100,
-        duration: '30s',
+        executor: 'ramping-vus',
+        startVUs: 0,
+        stages: [
+          { duration: '30s', target: 100 },
+          { duration: '10s', target: 0 },
+        ],
+        gracefulRampDown: '0s',
     },
   },
 };
