@@ -24,6 +24,8 @@
 //   http.get(`${BASE_URL}/category?category=2&page=1`);
 // }
 
+import { group, sleep } from 'k6';
+
 import http from 'k6/http';
 import { group, sleep } from 'k6';
 
