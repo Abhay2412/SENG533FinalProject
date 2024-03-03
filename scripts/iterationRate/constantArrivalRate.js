@@ -5,44 +5,43 @@ const BASE_URL = `http://${__ENV.HOST || 'localhost'}:8080/tools.descartes.teast
 
 const groupResponseTimes = {};
 
-
 export const options = {
     discardResponseBodies: true,
     scenarios: {
         scenario1: {
             executor: 'constant-arrival-rate',
-            duration: '1m',
+            duration: '30s',
             rate: 20,
             timeUnit: '1s',
-            preAllocatedVUs: 50,
+            preAllocatedVUs: 20,
         },
         scenario2: {
             executor: 'constant-arrival-rate',
             duration: '120s',
-            rate: 50,
+            rate: 20,
             timeUnit: '1s',
-            preAllocatedVUs: 100,
+            preAllocatedVUs: 20,
         },
         scenario3: {
             executor: 'constant-arrival-rate',
             duration: '30s',
             rate: 10,
             timeUnit: '1s',
-            preAllocatedVUs: 30,
+            preAllocatedVUs: 10,
         },
         scenario4: {
             executor: 'constant-arrival-rate',
             duration: '30s',
-            rate: 40,
+            rate: 10,
             timeUnit: '1s',
-            preAllocatedVUs: 70,
+            preAllocatedVUs: 10,
         },
         scenario5: {
             executor: 'constant-arrival-rate',
             duration: '30s',
-            rate: 15,
+            rate: 5, // Reduced the rate to match the VU limit
             timeUnit: '1s',
-            preAllocatedVUs: 40,
+            preAllocatedVUs: 5,
         },
     },
 };
