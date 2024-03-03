@@ -11,7 +11,7 @@ export const options = {
   scenarios: {
     blackTeaBrowse: {
         executor: 'constant-vus',
-        vus: 109,
+        vus: 100,
         duration: '30s',
     },
   },
