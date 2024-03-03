@@ -2,6 +2,8 @@ import { group, sleep } from 'k6';
 
 import http from 'k6/http';
 
+const BASE_URL = `http://${__ENV.HOST || 'localhost'}:8080/tools.descartes.teastore.webui`;
+
 const groupResponseTimes = {};
 
 export const options = {
@@ -12,13 +14,7 @@ export const options = {
     ],
 };
 
-const AHAD_IP = '10.1.9.58'
-const ABHAY_IP = '10.1.10.50'
-const MUSH_IP = '10.1.3.222'
-const PARBIR_IP = '10.1.10.210'
-
 export default function () {
-    const BASE_URL = `http://${ABHAY_IP}:8080/tools.descartes.teastore.webui`;
 
     group('TeaStore Homepage Browse', () => {
         const start = new Date();
