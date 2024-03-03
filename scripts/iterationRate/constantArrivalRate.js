@@ -10,38 +10,33 @@ export const options = {
     scenarios: {
         scenario1: {
             executor: 'constant-arrival-rate',
-            duration: '30s',
-            rate: 20,
+            duration: '120s',
+            rate: 100,
             timeUnit: '1s',
-            preAllocatedVUs: 20,
         },
         scenario2: {
             executor: 'constant-arrival-rate',
-            duration: '120s',
-            rate: 20,
+            duration: '30s',
+            rate: 100,
             timeUnit: '1s',
-            preAllocatedVUs: 20,
         },
         scenario3: {
             executor: 'constant-arrival-rate',
             duration: '30s',
-            rate: 10,
+            rate: 50,
             timeUnit: '1s',
-            preAllocatedVUs: 10,
         },
         scenario4: {
             executor: 'constant-arrival-rate',
             duration: '30s',
-            rate: 10,
+            rate: 30,
             timeUnit: '1s',
-            preAllocatedVUs: 10,
         },
         scenario5: {
             executor: 'constant-arrival-rate',
-            duration: '30s',
-            rate: 5, // Reduced the rate to match the VU limit
+            duration: '120s',
+            rate: 5,
             timeUnit: '1s',
-            preAllocatedVUs: 5,
         },
     },
 };
