@@ -13,32 +13,32 @@ export const options = {
             executor: 'shared-iterations',
             vus: 10,
             iterations: 200,
-            maxDuration: '30s',
+            maxDuration: '300s',
         },
         increaseIterations: {
             executor: 'shared-iterations',
             vus: 10,
             iterations: 400,
-            maxDuration: '60s',
+            maxDuration: '600s',
         },
         increaseVUs: {
             executor: 'shared-iterations',
             vus: 50,
             iterations: 200,
-            maxDuration: '30s',
+            maxDuration: '300s',
         },
-        increaseIterations2: {
-            executor: 'shared-iterations',
-            vus: 10,
-            iterations: 800,
-            maxDuration: '120s',
-        },
-        increaseVUs2: {
-            executor: 'shared-iterations',
-            vus: 100,
-            iterations: 200,
-            maxDuration: '30s',
-        },
+        // increaseIterations2: {
+        //     executor: 'shared-iterations',
+        //     vus: 10,
+        //     iterations: 800,
+        //     maxDuration: '120s',
+        // },
+        // increaseVUs2: {
+        //     executor: 'shared-iterations',
+        //     vus: 100,
+        //     iterations: 200,
+        //     maxDuration: '30s',
+        // },
     },
 };
 
