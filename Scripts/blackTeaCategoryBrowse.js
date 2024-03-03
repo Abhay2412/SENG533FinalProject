@@ -25,26 +25,28 @@
 // }
 
 import http from 'k6/http';
-import { sleep } from 'k6';
+import { group, sleep } from 'k6';
 
-const BASE_URL = `http://${'10.1.9.58' || 'localhost'}:8080/tools.descartes.teastore.webui`;
+const BASE_URL = `http://${__ENV.HOST || 'localhost'}:8080/tools.descartes.teastore.webui`;
+
+const groupResponseTimes = {};
 
 export const options = {
   discardResponseBodies: true,
   scenarios: {
     blackTeaBrowse: {
       executor: 'ramping-arrival-rate',
-      startRate: 50,
+      startRate: 0,
       timeUnit: '1s',
-      preAllocatedVUs: 50,
+      preAllocatedVUs: 100,
       maxVUs: 100,
       stages: [
-        { duration: '1m', target: 100 },
-        { duration: '3m', target: 200 },
-        { duration: '2m', target: 300 },
+        { duration: '30s', target: 10 },
+        { duration: '30s', target: 40 },
+        { duration: '40s', target: 100 },
       ],
       startTime: '10s',
-      gracefulRampDown: '20s',
+      // gracefulRampDown: '20s',
     },
   },
 };

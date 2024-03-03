@@ -2,7 +2,7 @@ import { group, sleep } from 'k6';
 
 import http from 'k6/http';
 
-const BASE_URL = `http://${process.env.HOST || 'localhost'}:8080/tools.descartes.teastore.webui`;
+const BASE_URL = `http://${__ENV.HOST || 'localhost'}:8080/tools.descartes.teastore.webui`;
 
 const groupResponseTimes = {};
 
@@ -31,7 +31,7 @@ export default function () {
         const end = new Date();
         const duration = end - start;
         groupResponseTimes['TeaStore Login User'] = (groupResponseTimes['TeaStore Login User'] || 0) + duration;
-        sleep(1);   
+        sleep(1);
     });
 
     group('Black Tea Category Browse', () => {
