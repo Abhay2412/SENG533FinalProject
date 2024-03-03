@@ -14,8 +14,8 @@ export const options = {
 
 const AHAD_IP = '10.1.9.58'
 const ABHAY_IP = '10.1.10.50'
-const MUSH_IP = ''
-const PARBIR_IP = ''
+const MUSH_IP = '10.1.3.222'
+const PARBIR_IP = '10.1.10.210'
 
 export default function () {
     const BASE_URL = `http://${ABHAY_IP}:8080/tools.descartes.teastore.webui`;
