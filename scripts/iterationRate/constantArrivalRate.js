@@ -8,12 +8,29 @@ const groupResponseTimes = {};
 export const options = {
     discardResponseBodies: true,
     scenarios: {
-        scenario1: {
+        // Scenario 1: High VUs and High Rate
+        highVUsHighRate: {
             executor: 'constant-arrival-rate',
             duration: '60s',
-            rate: 100,
+            rate: 200, // High rate
             timeUnit: '1s',
-            preAllocatedVUs: 100,
+            preAllocatedVUs: 100, // High number of VUs
+        },
+        // Scenario 2: Medium VUs and Medium Rate
+        mediumVUsMediumRate: {
+            executor: 'constant-arrival-rate',
+            duration: '60s',
+            rate: 100, // Medium rate
+            timeUnit: '1s',
+            preAllocatedVUs: 50, // Medium number of VUs
+        },
+        // Scenario 3: Low VUs and Low Rate
+        lowVUsLowRate: {
+            executor: 'constant-arrival-rate',
+            duration: '60s',
+            rate: 20, // Low rate
+            timeUnit: '1s',
+            preAllocatedVUs: 10, // Low number of VUs
         },
         // scenario2: {
         //     executor: 'constant-arrival-rate',
