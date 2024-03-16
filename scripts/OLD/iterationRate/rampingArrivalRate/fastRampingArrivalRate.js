@@ -36,7 +36,8 @@ export const options = {
 export default function () {
     group('Black Tea Category Browse', () => {
         const start = new Date();
-        http.get(`${BASE_URL}/category?category=2&page=1`);
+        // http.get(`${BASE_URL}/category?category=2&page=1`);
+        http.get(`https://www.amazon.ca/Best-Sellers-generic/zgbs/?ref_=nav_cs_bestsellers1`);
         const end = new Date();
         const duration = end - start;
         groupResponseTimes['Black Tea Category Browse'] = (groupResponseTimes['Black Tea Category Browse'] || 0) + duration;
