@@ -55,14 +55,14 @@ export default function () {
     group('TeaStore Homepage', () => {
         getTeaStoreHomepage();
     });
-    group('TeaStore White Tea Browse', () => {
-        getTeaStoreProductBrowse("6");
+    group('TeaStore Herbal Tea Browse', () => {
+        getTeaStoreProductBrowse("4");
     });
     group('TeaStore Rooibos Tea Browse', () => {
         getTeaStoreProductBrowse("5");
     });
-    group('TeaStore Herbal Tea Browse', () => {
-        getTeaStoreProductBrowse("4");
+    group('TeaStore White Tea Browse', () => {
+        getTeaStoreProductBrowse("6");
     });
     group('TeaStore View Profile', () => {
         const start = new Date();
