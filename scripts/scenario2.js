@@ -1,3 +1,9 @@
+/**
+ * Code Developed by: Ahad Ali/Abhay Khosla 
+ * Date: March 15th 2024
+ * Location: Calgary, Alberta
+ */
+
 import { group, sleep } from 'k6';
 
 import http from 'k6/http';
