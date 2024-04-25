@@ -6,23 +6,6 @@ const BASE_URL = `http://${__ENV.HOST || 'localhost'}:8080/tools.descartes.teast
 
 const groupResponseTimes = {};
 
-//Stress
-export const options = {
-  discardResponseBodies: true,
-  scenarios: {
-    blackTeaBrowse: {
-      executor: 'ramping-vus',
-      startVUs: 0,
-      stages: [
-        { duration: '20s', target: 10 },
-        { duration: '30s', target: 50 },
-        { duration: '30s', target: 75 },
-        { duration: '30s', target: 100 },
-      ],
-      gracefulRampDown: '0s',
-    },
-  },
-};
 
 //Spikes
 export const options = {
