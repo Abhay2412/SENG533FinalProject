@@ -8,20 +8,20 @@ const groupResponseTimes = {};
 
 //Spikes
 export const options = {
-  discardResponseBodies: true,
-  scenarios: {
-    blackTeaBrowse: {
-        executor: 'ramping-vus',
-        startVUs: 0,
-        stages: [
-        { duration: '30s', target: 25 },
-        { duration: '30s', target: 100 },
-        { duration: '1m', target: 100 },
-        { duration: '30s', target: 0 },
-        ],
-        gracefulRampDown: '0s',
+    discardResponseBodies: true,
+    scenarios: {
+        blackTeaBrowse: {
+            executor: 'ramping-vus',
+            startVUs: 0,
+            stages: [
+                { duration: '30s', target: 25 },
+                { duration: '30s', target: 100 },
+                { duration: '1m', target: 100 },
+                { duration: '30s', target: 0 },
+            ],
+            gracefulRampDown: '0s',
+        },
     },
-  },
 };
 
 export default function () {
@@ -39,7 +39,7 @@ export default function () {
         const start = new Date();
 
         const loginActionPayload = {
-            "referer": "http://10.1.9.58:8080/tools.descartes.teastore.webui/",
+            "referer": `${BASE_URL}/`,
             "username": "user2",
             "password": "password",
             "signin": "Sign in"

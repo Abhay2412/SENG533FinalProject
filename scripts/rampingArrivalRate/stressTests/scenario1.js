@@ -45,7 +45,7 @@ export default function () {
 
     group('TeaStore Login Action', () => {
         const loginActionPayload = {
-            "referer": "http://10.1.9.58:8080/tools.descartes.teastore.webui/",
+            "referer": `${BASE_URL}/`,
             "username": "user",
             "password": "password",
             "signin": "Sign in",
@@ -60,7 +60,7 @@ export default function () {
 
     group('TeaStore Login Action', () => {
         const loginActionPayload = {
-            "referer": "http://10.1.9.58:8080/tools.descartes.teastore.webui/",
+            "referer": `${BASE_URL}/`,
             "username": "user2",
             "password": "password",
             "signin": "Sign in",

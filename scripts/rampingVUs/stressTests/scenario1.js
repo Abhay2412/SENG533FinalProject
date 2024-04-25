@@ -6,23 +6,24 @@ const BASE_URL = `http://${__ENV.HOST || 'localhost'}:8080/tools.descartes.teast
 
 const groupResponseTimes = {};
 
-//Spikes
+
+//Stress
 export const options = {
-  discardResponseBodies: true,
-  scenarios: {
-    blackTeaBrowse: {
+    discardResponseBodies: true,
+    scenarios: {
+      blackTeaBrowse: {
         executor: 'ramping-vus',
         startVUs: 0,
         stages: [
-        { duration: '30s', target: 25 },
-        { duration: '30s', target: 100 },
-        { duration: '1m', target: 100 },
-        { duration: '30s', target: 0 },
+          { duration: '20s', target: 10 },
+          { duration: '30s', target: 50 },
+          { duration: '30s', target: 75 },
+          { duration: '30s', target: 100 },
         ],
         gracefulRampDown: '0s',
+      },
     },
-  },
-};
+  };
 
 export default function () {
     group('TeaStore Homepage', () => {
@@ -34,7 +35,7 @@ export default function () {
 
     group('TeaStore Login Action', () => {
         const loginActionPayload = {
-            "referer": "http://10.1.9.58:8080/tools.descartes.teastore.webui/",
+            "referer": `${BASE_URL}/`,
             "username": "user",
             "password": "password",
             "signin": "Sign in",
@@ -49,7 +50,7 @@ export default function () {
 
     group('TeaStore Login Action', () => {
         const loginActionPayload = {
-            "referer": "http://10.1.9.58:8080/tools.descartes.teastore.webui/",
+            "referer": `${BASE_URL}/`,
             "username": "user2",
             "password": "password",
             "signin": "Sign in",
