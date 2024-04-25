@@ -15,7 +15,7 @@ export const options = {
             timeUnit: '1s',
 
             // Pre-allocate necessary VUs.
-            preAllocatedVUs: 100,
+            preAllocatedVUs: 1,
 
             stages: [
 

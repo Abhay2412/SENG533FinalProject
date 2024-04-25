@@ -6,7 +6,7 @@ const BASE_URL = `http://${__ENV.HOST || 'localhost'}:8080/tools.descartes.teast
 
 const groupResponseTimes = {};
 
-//Spikes
+//Stress
 export const options = {
     discardResponseBodies: true,
     scenarios: {
@@ -14,11 +14,10 @@ export const options = {
             executor: 'ramping-vus',
             startVUs: 0,
             stages: [
-                { duration: '20s', target: 10 },
-                { duration: '30s', target: 70 },
-                { duration: '10s', target: 10 },
-                { duration: '30s', target: 90 },
-                { duration: '10s', target: 10 },
+              { duration: '30s', target: 25 },
+              { duration: '30s', target: 100 },
+              { duration: '1m', target: 100 },
+              { duration: '30s', target: 0 },
             ],
             gracefulRampDown: '0s',
         },

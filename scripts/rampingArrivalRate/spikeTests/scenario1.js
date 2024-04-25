@@ -15,20 +15,33 @@ export const options = {
             timeUnit: '1s',
 
             // Pre-allocate necessary VUs.
-            preAllocatedVUs: 100,
+            // preAllocatedVUs: 100,
 
             stages: [
 
-                { target: 10, duration: '40s' },
-
-                { target: 80, duration: '20s' },
-
-                { target: 10, duration: '40s' },
-
-                { target: 100, duration: '20s' },
-
                 { target: 10, duration: '20s' },
+
+                { target: 70, duration: '30s' },
+
+                { target: 10, duration: '10s' },
+
+                { target: 90, duration: '30s' },
+
+                { target: 10, duration: '10s' },
             ],
+
+            // executor: 'ramping-arrival-rate',
+            startVUs: 0,
+            // stages: [
+            //     { target: '20s', duration: 10 },
+            //     { target: '30s', duration: 70 },
+            //     { target: '10s', duration: 10 },
+            //     { target: '30s', duration: 90 },
+            //     { target: '10s', duration: 10 },
+            // ],
+            gracefulRampDown: '0s',
+
+
         },
     },
 };
